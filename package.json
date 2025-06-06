@@ -1,18 +1,28 @@
 {
-  "name": "testing-demo",
+  "name": "project-git",
   "version": "1.0.0",
-  "description": "",
-  "main": "db.js",
-  "directories": {
-    "test": "tests"
-  },
-  "dependencies": {
-    "nodemailer": "^7.0.3"
-  },
+  "description": "Web page Vendoora",
+  "license": "ISC",
+  "author": "Marian Rares",
+  "type": "commonjs",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cloudinary": "^1.41.3",
+    "config": "^4.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.15.0",
+    "mongose": "^0.0.2-security",
+    "multer": "^2.0.0",
+    "multer-storage-cloudinary": "^4.0.0",
+    "path": "^0.12.7"
+  }
 }
