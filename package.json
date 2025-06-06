@@ -6,8 +6,9 @@
   "directories": {
     "test": "tests"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "nodemailer": "^7.0.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
