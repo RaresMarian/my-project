@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrazione</title>
+  <link rel="stylesheet" href="style_register.css" />
+</head>
+
+<body>
+  <form id="register-form">
+    <div class="register-box">
+      <h2>Crea un nuovo account</h2>
+
+      <div class="nome-completo">
+        <input class="nome" type="text" placeholder="Nome" id="name" required>
+        <input class="nome" type="text" placeholder="Cognome" id="surname" required>
+      </div>
+
+      <div class="sesso">
+        <div class="sex">
+          <input type="radio" name="sesso" id="sex-male" value="uomo" required>
+          <label for="sex-male">Uomo</label>
+        </div>
+        <div class="sex">
+          <input type="radio" name="sesso" id="sex-female" value="donna" required>
+          <label for="sex-female">Donna</label>
+        </div>
+      </div>
+
+      <label for="birth_date">Data di nascita:</label>
+      <div class="data-nascita">
+        <input type="date" id="birth_date" class="data-nascita-box" required>
+      </div>
+
+      <div class="email-password">
+        <input class="entry" type="text" id="email" placeholder="Email o numero di cellulare" required>
+        <input class="entry" type="password" id="password" placeholder="Password" required>
+      </div>
+
+      <button class="button" id="register-btn">Registrati</button>
+    </div>
+    <div id="code-section" style="display: none;">
+    <input type="text" id="verification-code" placeholder="Inserisci codice di verifica" />
+    <button id="verify-btn">Verifica Codice</button>
+    </div>
+
+    <div id="success-toast" class="mini-success" style="display: none;">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+  </svg>
+  Registrazione completata!
+</div>
+
+  </form>
+  
+
+  <script src="regControl.js"></script>
+</body>
+</html>

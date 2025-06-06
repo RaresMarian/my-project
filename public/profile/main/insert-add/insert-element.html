@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inserisci Annuncio</title>
+  <link rel="stylesheet" href="style-add.css">
+</head>
+<body>
+  <div class="container">
+    <a href="javascript:history.back()" class="freccia-indietro">← Indietro</a>
+    <h1>Pubblica il tuo annuncio</h1>
+
+    <form class="ad-form">
+      <!-- FOTO -->
+      <div class="form-group">
+        <label for="immagine">Foto</label>
+        <input type="file" id="immagine" name="immagine" accept="image/*">
+        <img id="immaginePreview" style="display: none; max-width: 200px; margin-top: 10px;" alt="Anteprima immagine">
+      </div>
+
+      <!-- TITOLO -->
+      <!-- Corretto: ID coerenti con il JS -->
+<div class="form-group">
+  <label for="titolo">Titolo</label>
+  <input type="text" id="titolo" name="titolo" required>
+</div>
+
+<div class="form-group">
+  <label for="descrizione">Descrizione</label>
+  <textarea id="descrizione" name="descrizione" rows="5" required></textarea>
+</div>
+
+<div class="form-group">
+  <label for="prezzo">Prezzo (&euro;)</label>
+  <input type="number" id="prezzo" name="prezzo" step="0.01" required>
+</div>
+
+<div class="form-group">
+  <label for="comune">Comune</label>
+  <input type="text" id="comune" name="comune" required>
+</div>
+
+<div class="form-group">
+  <label for="contatto">Contatto (Telefono o Email)</label>
+  <input type="text" id="contatto" name="contatto" required>
+</div>
+
+<div class="form-group">
+  <label for="type">Categoria</label>
+  <select id="categoria" name="categoria" required>
+  <option value="">-- Seleziona --</option>
+  <option value="auto-moto">Auto e Moto</option>
+  <option value="informatica">Informatica</option>
+  <option value="telefonia">Telefonia</option>
+  <option value="elettrodomestici">Elettrodomestici</option>
+  <option value="immobili">Immobili</option>
+  <option value="giocattoli">Giocattoli</option>
+  <option value="arredamento">Arredamento</option>
+  <option value="sport">Sport</option>
+  <option value="altro">Altro</option>
+
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="condizioni">Condizioni dell’oggetto</label>
+  <select id="condizioni" name="condizioni" required>
+    <option value="">-- Seleziona --</option>
+    <option value="Nuovo">Nuovo</option>
+    <option value="Usato - Ottimo stato">Usato - Ottimo stato</option>
+    <option value="Usato - Buono stato">Usato - Buono stato</option>
+    <option value="Da riparare">Da riparare</option>
+  </select>
+</div>
+
+
+      <button type="submit" class="btn-submit">Pubblica Annuncio</button>
+    </form>
+
+    <!-- SEZIONE PREVIEW ANNUNCI -->
+    <div id="annunciPreview" class="annunci-grid"></div>
+  </div>
+
+  <script src="./insert-add.js"></script>
+</body>
+</html>

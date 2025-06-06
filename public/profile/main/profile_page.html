@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style_profile.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="mini_menu"></div>
+
+        <div class="menu">
+            <a href="/">
+                <div class="logo">
+                    <img src="./images/shopping-cart.png" alt="logo" class="logo-icon">
+                    <h1 class="logo-text">Vendoora</h1>
+                </div>
+            </a>
+            <div class="insert-ad">
+                <a class="insert_ad" href="./insert-add/insert-element.html">Inserisci annuncio </a>
+            </div>
+
+            <div id="options" class="dropdown">
+                <span id="user-name"></span>
+                <img src="./images/arrow.png" class="arrow-img" />
+
+            <div class="dropdown-menu">
+                <div id="dropdown-item-user"></div>
+                <div class="dropdown-item">Impostazioni</div>
+                <div class="dropdown-item">Esci</div>
+            </div>
+            </div>
+            
+
+        </div> 
+
+        <div class="search-grid">
+  <div class="search-item">
+    <label for="what">Cosa cerchi?</label>
+    <input type="text" id="what" placeholder="Vespa, iPhone, Bilocale...">
+  </div>
+
+  <div class="search-item">
+    <label for="category">In quale categoria?</label>
+    <select id="category">
+    <option>Tutte le categorie</option>
+    <option value="auto-moto">Auto e Moto</option>
+    <option value="informatica">Informatica</option>
+    <option value="telefonia">Telefonia</option>
+    <option value="elettrodomestici">Elettrodomestici</option>
+    <option value="immobili">Immobili</option>
+    <option value="giocattoli">Giocattoli</option>
+    <option value="arredamento">Arredamento</option>
+    <option value="sport">Sport</option>
+    <option value="altro">Altro</option>
+
+    </select>
+  </div>
+
+  <div class="search-item location">
+    <label for="where">Dove?</label>
+    <div class="location-wrapper">
+    <input type="text" id="cityInput" placeholder="Cerca città..." autocomplete="off">
+    <ul id="suggestions"></ul>
+    <button class="detect-btn" title="Rileva posizione">
+        📍
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="nav_bar"></div>
+    <div class="title">
+    </div>
+    <p class="online_count"></p>
+
+    <!-- Container Annunci -->
+    <div id="annunci-container"></div>
+
+
+    <div class="main">
+        <span class="earth"><a href="#About"><img src="./images/planet-earth.png" alt=""></a></span>
+    </div>
+    <section id="About" style="padding: 50px 20px; background-color: #e8f5e9;">
+  <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <h2 style="color: #2e7d32; font-size: 2.2rem; margin-bottom: 20px;">Chi siamo</h2>
+    <p style="font-size: 1.1rem; line-height: 1.6; color: #4e944f;">
+      Benvenuto nella nostra piattaforma! Siamo un team dedicato a rendere la compravendita di oggetti più semplice e sicura.
+      Il nostro obiettivo è offrire un'esperienza intuitiva per chiunque voglia pubblicare o cercare annunci nella propria zona.
+    </p>
+    <p style="font-size: 1.05rem; margin-top: 15px; color: #388e3c;">
+      Che tu stia vendendo un oggetto che non usi più o cercando un affare vicino a te, sei nel posto giusto. 
+      Siamo qui per aiutarti a connetterti in modo efficace e veloce.
+    </p>
+  </div>
+</section>
+
+</div>
+
+    <script src="profile.js"></script>
+    
+    
+    
+</body>
+</html>

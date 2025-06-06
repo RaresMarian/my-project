@@ -1,0 +1,73 @@
+h1{
+  color: rgb(28, 182, 210);
+}
+hr{
+  width: 50%;
+}
+.centra{
+  height: 2em;
+}
+.ms-accedi{
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  
+
+}
+
+.box{
+  width: 100%;
+}
+body{
+ height: 100vh;
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+
+.login-box{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ width: 30vw; /* Adatta la larghezza in base alla viewport */
+ height: 60vh; /* Adatta l'altezza in base alla viewport */
+ max-width: 500px; /* Imposta una dimensione massima */
+ max-height: 600px;
+ min-width: 250px; /* Evita che diventi troppo piccolo */
+ min-height: 300px;
+ border: 1px solid grey;
+ border-radius: 5%;
+ 
+}
+
+input:not([type="button"]){
+  border: 1px solid grey;
+  background-color: rgb(138, 216, 237);
+  width:80%;
+
+}
+
+input[type="button"]{
+  width:80%;
+  background: rgb(8, 102, 255);
+  color:white;
+  border: 1px solid grey;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+input[type="button"]:hover{
+  background:rgb( 24 119 242);
+}
+
+
+.centra{
+  display: flex;
+  justify-content: center;
+
+}
+
+
+
+

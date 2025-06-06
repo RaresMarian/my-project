@@ -1,0 +1,359 @@
+
+a {
+  text-decoration: none;
+}
+
+/*  Stile base per il body */
+body {
+  min-width: 400px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  height: 200vh;
+}
+
+/*  Menu principale */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 15vh;
+  padding: 10px;
+  background-color: #f3f3f3;
+}
+
+/*  Logo stilizzato */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2e7d32;
+  background: linear-gradient(to bottom right, #ffffff, #e8f5e9);
+  border: 2px solid #4CAF50;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.logo:hover {
+  background: linear-gradient(to bottom right, #c8e6c9, #a5d6a7);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+  transform: scale(1.05);
+}
+
+/*  Icona del logo */
+.logo-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/*  Testo del logo */
+.logo-text {
+  font-style: italic;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.4rem;
+  color: #2e7d32;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*  Bottone inserisci annuncio */
+.insert_ad {
+  cursor: pointer;
+  display: inline-block;
+  padding: 16px 32px;
+  background: linear-gradient(to right, #4CAF50, #66BB6A);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.insert_ad:hover {
+  background: linear-gradient(to right, #388E3C, #43A047);
+  transform: translateY(-2px);
+}
+
+/*  Responsive: menu verticale su schermi piccoli */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+/*  Contenuto principale */
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+}
+
+/* 🌍 Icona Terra cliccabile */
+.earth {
+  cursor: pointer;
+}
+
+/*  Sezione "Chi siamo" */
+.about-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#About {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*  Dropdown menu utente */
+.dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: lightblue;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover {
+  transform: scale(1.05);
+}
+
+/*  Icona freccia rotante */
+.arrow-img {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .arrow-img {
+  transform: rotate(90deg);
+}
+
+/*  Menu dropdown nascosto */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-width: 150px;
+  z-index: 100;
+}
+
+/* Mostra dropdown al hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/*  Voce del menu */
+.dropdown-item,
+#dropdown-item-user {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/*  Sezione filtri di ricerca */
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f1fdf6;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  max-width: 900px;
+}
+
+.search-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-item label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2e7d5d;
+}
+
+.search-item input,
+.search-item select {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/*  Campo posizione con bottone */
+.location-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.location-wrapper input {
+  flex-grow: 1;
+}
+
+.detect-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 8px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/*  Suggerimenti città */
+#cityInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+#suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#suggestions li {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+#suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+/*  Container annunci (nascosto di default) */
+#annunci-container {
+  display: none;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Mostrato dopo caricamento */
+#annunci-container.show {
+  display: flex;
+}
+
+.annuncio-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 1rem auto;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* RIGA: immagine + titolo/prezzo */
+.annuncio-top {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* Immagine a sinistra */
+.annuncio-img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+}
+
+/* Titolo e prezzo */
+.annuncio-basic-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.annuncio-titolo {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.annuncio-prezzo {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007e3a;
+}
+
+/* Descrizione + altri dettagli */
+.annuncio-dettagli {
+  padding: 0.8rem 1rem;
+  border-top: 1px solid #eee;
+}
+
+.annuncio-descrizione {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.annuncio-extra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.annuncio-contatto {
+  color: #c62828;
+  font-weight: bold;
+}
+
