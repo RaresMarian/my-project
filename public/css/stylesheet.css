@@ -296,3 +296,10 @@ button:hover,
     text-align: center;
   }
 }
+
+/* immagine in base alla grandeza */
+.immagine-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
