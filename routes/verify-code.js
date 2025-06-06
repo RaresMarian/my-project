@@ -24,7 +24,7 @@ router.post('/verify-code', async(req, res) => {
     req.body.password=hashedPassword;
     const user = await createProfile(req.body);
     const token = await genToken(user);
-    res.status(200).json({user:user.id,token});
+    res.status(200).json({user});
   }
   catch(err){
     console.log(err);
