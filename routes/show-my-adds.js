@@ -7,7 +7,8 @@ const annuncio_model= require('../schemas/insert-add-model');
 router.get("/show-my-adds", auth,async (req, res) => {
   try {
     const emailUtente = req.user.email; // o req.query.email
-    const annunci = await annuncio_model.find({ 'author.email': emailUtente }).select("-_id");
+    const annunci = await annuncio_model.find({ 'author.email': emailUtente });
+    console.log(annunci);
     res.send(annunci);
     
   } catch (err) {
