@@ -301,3 +301,17 @@ button:hover,
     text-align: center;
   }
 }
+
+.immagine-responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+  content: url('../images/neon-lights-7340790_1280.jpg');
+}
+
+@media (max-width: 480px) {
+  .immagine-responsive {
+    content: url('../images/neon-lights-mobile.jpg'); /* Metti il nome della tua immagine per mobile */
+  }
+}
+
