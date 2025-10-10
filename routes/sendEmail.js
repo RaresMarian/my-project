@@ -5,11 +5,11 @@ const model = require('../schemas/profileModel');
 const express = require('express');
 const router = express.Router();
 
-// ✅ Configurazione compatibile con Render (Brevo SMTP)
+// Configurazione SMTP Brevo (funziona su Render)
 const transporter = nodemailer.createTransport({
   host: "smtp-relay.brevo.com",
   port: 587,
-  secure: false, // usare TLS esplicito
+  secure: false, // TLS esplicito
   auth: {
     user: "raresmarian1996@gmail.com", // o la tua email verificata su Brevo
     pass: process.env.BREVO_SMTP_KEY
@@ -27,7 +27,7 @@ router.post('/send-email', async (req, res) => {
     const code = Math.floor(100000 + Math.random() * 900000).toString();
 
     const mailOptions = {
-      from: "raresmarian1996@gmail.com",
+      from: "raresmarian1996@gmail.com", // deve essere verificata su Brevo
       to: email,
       subject: "Il tuo codice di verifica",
       text: `Il tuo codice di verifica è: ${code}`
