@@ -1,22 +1,17 @@
-const nodemailer = require("nodemailer");
-require('dotenv').config();
-const pendingRegistrations = {};
-const model = require('../schemas/profileModel');
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+require("dotenv").config();
+const model = require("../schemas/profileModel");
+const pendingRegistrations = {};
 
-// Configurazione SMTP Brevo (funziona su Render)
-const transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com",
-  port: 587,
-  secure: false, // TLS esplicito
-  auth: {
-    user: "raresmarian1996@gmail.com", // o la tua email verificata su Brevo
-    pass: process.env.BREVO_SMTP_KEY
-  }
-});
+// Importa la libreria ufficiale di Brevo
+const Brevo = require("@getbrevo/brevo");
 
-router.post('/send-email', async (req, res) => {
+// Configurazione API Brevo
+const client = new Brevo.TransactionalEmailsApi();
+client.setApiKey(Brevo.TransactionalEmailsApiApiKeys.apiKey, process.env.BREVO_API_KEY);
+
+router.post("/send-email", async (req, res) => {
   try {
     const existingUser = await model.findOne({ email: req.body.email });
     if (existingUser) {
@@ -26,14 +21,15 @@ router.post('/send-email', async (req, res) => {
     const email = req.body.email;
     const code = Math.floor(100000 + Math.random() * 900000).toString();
 
-    const mailOptions = {
-      from: "raresmarian1996@gmail.com", // deve essere verificata su Brevo
-      to: email,
+    const sendSmtpEmail = {
+      sender: { email: "raresmarian1996@gmail.com", name: "Verifica account" }, // deve essere verificata su Brevo
+      to: [{ email }],
       subject: "Il tuo codice di verifica",
-      text: `Il tuo codice di verifica è: ${code}`
+      textContent: `Il tuo codice di verifica è: ${code}`
     };
 
-    await transporter.sendMail(mailOptions);
+    // Invia email con l’API
+    await client.sendTransacEmail(sendSmtpEmail);
 
     pendingRegistrations.code = code;
     res.status(200).json({ ok: true });
@@ -48,4 +44,5 @@ module.exports = {
   router,
   pendingRegistrations
 };
+
 

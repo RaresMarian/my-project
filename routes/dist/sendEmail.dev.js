@@ -1,30 +1,22 @@
 "use strict";
 
-var nodemailer = require("nodemailer");
+var express = require("express");
 
-require('dotenv').config();
+var router = express.Router();
 
-var pendingRegistrations = {};
+require("dotenv").config();
 
-var model = require('../schemas/profileModel');
+var model = require("../schemas/profileModel");
 
-var express = require('express');
+var pendingRegistrations = {}; // Importa la libreria ufficiale di Brevo
 
-var router = express.Router(); // Configurazione SMTP Brevo (funziona su Render)
+var Brevo = require("@getbrevo/brevo"); // Configurazione API Brevo
 
-var transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com",
-  port: 587,
-  secure: false,
-  // TLS esplicito
-  auth: {
-    user: "raresmarian1996@gmail.com",
-    // o la tua email verificata su Brevo
-    pass: process.env.BREVO_SMTP_KEY
-  }
-});
-router.post('/send-email', function _callee(req, res) {
-  var existingUser, email, code, mailOptions;
+
+var client = new Brevo.TransactionalEmailsApi();
+client.setApiKey(Brevo.TransactionalEmailsApiApiKeys.apiKey, process.env.BREVO_API_KEY);
+router.post("/send-email", function _callee(req, res) {
+  var existingUser, email, code, sendSmtpEmail;
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -48,15 +40,21 @@ router.post('/send-email', function _callee(req, res) {
         case 6:
           email = req.body.email;
           code = Math.floor(100000 + Math.random() * 900000).toString();
-          mailOptions = {
-            from: "raresmarian1996@gmail.com",
+          sendSmtpEmail = {
+            sender: {
+              email: "raresmarian1996@gmail.com",
+              name: "Verifica account"
+            },
             // deve essere verificata su Brevo
-            to: email,
+            to: [{
+              email: email
+            }],
             subject: "Il tuo codice di verifica",
-            text: "Il tuo codice di verifica \xE8: ".concat(code)
-          };
+            textContent: "Il tuo codice di verifica \xE8: ".concat(code)
+          }; // Invia email con l’API
+
           _context.next = 11;
-          return regeneratorRuntime.awrap(transporter.sendMail(mailOptions));
+          return regeneratorRuntime.awrap(client.sendTransacEmail(sendSmtpEmail));
 
         case 11:
           pendingRegistrations.code = code;
