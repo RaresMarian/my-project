@@ -78,10 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch('/verify', {
       method: "GET",
       headers: { "x-auth-token": token }
+      
     }).then(res => {
       if (res.status === 400) return;
       console.log('Token valido');
     });
+    
 
     // Dati utente
     fetch('/load-info', {
@@ -104,7 +106,20 @@ document.addEventListener("DOMContentLoaded", function () {
         
       })
       .catch(err => console.error(err));
+      
 
+  }else{
+    const drop_down_menu = document.querySelector('.dropdown-menu');
+    const new_opt = document.createElement('div');
+    const link = document.createElement('a');
+    link.innerText = "Accedi";
+    link.href = '/login/login.html';
+
+    new_opt.appendChild(link);
+    drop_down_menu.appendChild(new_opt);
+
+     
+    
   }
 
   // Ricerca personalizzata

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impostazioni</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar/Menu -->
+    <nav class="sidebar">
+      <h2>Impostazioni</h2>
+      <ul>
+        <li class="active" onclick="showSection('profilo', this)">Profilo</li>
+        <li onclick="showSection('sicurezza', this)">Sicurezza</li>
+      </ul>
+    </nav>
+
+    <!-- Contenuto principale -->
+    <main class="main-content">
+      <!-- Profilo -->
+      <section class="section" id="profilo">
+        <h3>Profilo e informazioni personali</h3>
+        <form>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome">
+
+          <label for="cognome">Cognome</label>
+          <input type="text" id="cognome" name="cognome" placeholder="Inserisci il tuo cognome">
+
+          <label for="dataNascita">Data di nascita</label>
+          <input type="date" id="dataNascita" name="dataNascita">
+
+          <label for="cellulare">Numero cellulare</label>
+          <input type="tel" id="cellulare" name="cellulare" placeholder="Inserisci il tuo numero">
+
+          <button type="submit">Salva modifiche</button>
+        </form>
+      </section>
+
+      <!-- Sicurezza -->
+      <section class="section" id="sicurezza" style="display:none;">
+        <h3>Sicurezza</h3>
+        <form>
+          <label for="password">Password attuale</label>
+          <input type="password" id="password" name="password" placeholder="Inserisci la tua password attuale">
+
+          <label for="nuovaPassword">Nuova password</label>
+          <input type="password" id="nuovaPassword" name="nuovaPassword" placeholder="Inserisci la nuova password">
+
+          <label for="confermaPassword">Conferma nuova password</label>
+          <input type="password" id="confermaPassword" name="confermaPassword" placeholder="Conferma la nuova password">
+
+          <button type="submit">Cambia password</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function showSection(id, element) {
+      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      document.querySelectorAll('.sidebar li').forEach(li => li.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+  </script>
+</body>
+</html>
