@@ -357,3 +357,11 @@ body {
   font-weight: bold;
 }
 
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #f1f1f1;
+  color: #555;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
