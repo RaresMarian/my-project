@@ -1,73 +1,113 @@
-h1{
-  color: rgb(28, 182, 210);
-}
-hr{
-  width: 50%;
-}
-.centra{
-  height: 2em;
-}
-.ms-accedi{
-  display: flex;
-  flex-direction: row;
-  align-self: flex-start;
-  
-
+/* RESET E STILI BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.box{
-  width: 100%;
-}
-body{
- height: 100vh;
-  display: flex;
-  justify-content: center; /* Centra orizzontalmente */
-  align-items: center; /* Centra verticalmente */
-}
-
-
-.login-box{
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- width: 30vw; /* Adatta la larghezza in base alla viewport */
- height: 60vh; /* Adatta l'altezza in base alla viewport */
- max-width: 500px; /* Imposta una dimensione massima */
- max-height: 600px;
- min-width: 250px; /* Evita che diventi troppo piccolo */
- min-height: 300px;
- border: 1px solid grey;
- border-radius: 5%;
- 
-}
-
-input:not([type="button"]){
-  border: 1px solid grey;
-  background-color: rgb(138, 216, 237);
-  width:80%;
-
-}
-
-input[type="button"]{
-  width:80%;
-  background: rgb(8, 102, 255);
-  color:white;
-  border: 1px solid grey;
-  border-radius: 1rem;
-  cursor: pointer;
-}
-input[type="button"]:hover{
-  background:rgb( 24 119 242);
-}
-
-
-.centra{
+body {
+  height: 100vh;
   display: flex;
   justify-content: center;
-
+  align-items: center;
+  background: linear-gradient(135deg, #6dd5fa, #2980b9);
+  color: #333;
 }
 
+/* LOGIN BOX MODERNA */
+.login-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 15px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
 
+.login-box:hover {
+  transform: translateY(-5px);
+}
 
+/* TITOLO */
+.login-box h1 {
+  font-size: 2rem;
+  color: #2980b9;
+  margin-bottom: 25px;
+  text-align: center;
+}
 
+/* INPUT */
+.login-box input:not([type="button"]) {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-box input:not([type="button"]):focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+  outline: none;
+}
+
+/* BOTTONE */
+.login-box input[type="button"] {
+  width: 100%;
+  padding: 12px 15px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-box input[type="button"]:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* LINK DI SUPPORTO */
+.ms-accedi {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.ms-accedi a {
+  color: #3498db;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.ms-accedi a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+
+  .login-box h1 {
+    font-size: 1.5rem;
+  }
+
+  .login-box input:not([type="button"]),
+  .login-box input[type="button"] {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
