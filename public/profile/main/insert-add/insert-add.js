@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("Accesso non autorizzato. Effettua il login.");
+      showMessage("Accesso non autorizzato. Effettua il login.");
       return;
     }
 
@@ -66,9 +66,26 @@ document.addEventListener("DOMContentLoaded", function () {
         reader.readAsDataURL(file);
       })
       .catch(err => {
-        console.error("❌ Errore salvataggio annuncio:", err);
-        alert("Errore nel salvataggio dell'annuncio.");
+        showMessage("Errore nel salvataggio dell'annuncio.");
       });
   });
 });
+
+function showMessage(text, duration = 3000) {
+  const box = document.getElementById('message-box');
+  box.textContent = text;
+  box.style.display = 'block';
+
+  // Reset animazione
+  box.style.animation = 'none';
+  box.offsetHeight; // forza reflow
+  box.style.animation = `fadein 0.3s ease, fadeout 0.3s ease ${duration/1000}s forwards`;
+
+  // Nascondi dopo la durata
+  setTimeout(() => {
+    box.style.display = 'none';
+  }, duration + 300);
+}
+
+
 

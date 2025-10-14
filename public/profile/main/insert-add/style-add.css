@@ -1,4 +1,3 @@
-/* styles.css */
 :root {
   --verde-primario: #2e7d32;
   --verde-secondario: #66bb6a;
@@ -15,9 +14,6 @@ body {
   background: linear-gradient(135deg, var(--verde-chiaro), var(--verde-acqua));
   color: #333;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .container {
@@ -25,8 +21,9 @@ body {
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 20px var(--verde-ombre);
-  width: 100%;
+  width: 90%;
   max-width: 800px;
+  margin: 20px auto;
 }
 
 h1 {
@@ -135,7 +132,6 @@ textarea:focus {
   color: #444;
 }
 
-
 .freccia-indietro {
   display: inline-block;
   padding: 8px 12px;
@@ -150,3 +146,88 @@ textarea:focus {
 .freccia-indietro:hover {
   background-color: #ddd;
 }
+
+.message-box {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f44336; /* rosso alert */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  display: none; /* nascosto di default */
+  z-index: 10000;
+  max-width: 90%;
+  word-wrap: break-word;
+  animation: fadein 0.3s ease, fadeout 0.3s ease 3s forwards;
+}
+@keyframes fadein {
+  from { opacity: 0; top: 0; }
+  to { opacity: 1; top: 20px; }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; top: 20px; }
+  to { opacity: 0; top: 0; }
+}
+
+/* MOBILE E TABLET */
+@media (max-width: 768px) {
+  .ad-form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .btn-submit {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .annunci-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .annuncio-img {
+    height: 130px;
+  }
+}
+
+/* ULTRA SMALL DEVICES */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input, select, textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .freccia-indietro {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .annuncio-img {
+    height: 120px;
+  }
+
+  .annuncio-info h3 {
+    font-size: 1rem;
+  }
+
+  .annuncio-info p {
+    font-size: 0.85rem;
+  }
+}
+
