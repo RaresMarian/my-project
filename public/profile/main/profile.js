@@ -121,8 +121,26 @@ document.addEventListener("DOMContentLoaded", function () {
         settings.classList.add('menu-link');
         settings_opt.appendChild(settings);
 
+        const exit_opt = document.createElement('div');
+        exit_opt.classList.add('dropdown-item');
+
+        const exit_link = document.createElement('a');
+        exit_link.innerText = "Esci";
+        exit_link.href = "#";
+        exit_link.classList.add('menu-link');
+
+        exit_link.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('token');
+          window.location.reload();
+        });
+
+        exit_opt.appendChild(exit_link);
         drop_down_menu.appendChild(new_opt);
         drop_down_menu.appendChild(settings_opt);
+        drop_down_menu.appendChild(exit_opt);
+
+
       })
       .catch(err => console.error(err));
   } else {

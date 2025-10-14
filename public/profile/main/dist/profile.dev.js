@@ -95,8 +95,21 @@ document.addEventListener("DOMContentLoaded", function () {
       settings.href = './settings.html';
       settings.classList.add('menu-link');
       settings_opt.appendChild(settings);
+      var exit_opt = document.createElement('div');
+      exit_opt.classList.add('dropdown-item');
+      var exit_link = document.createElement('a');
+      exit_link.innerText = "Esci";
+      exit_link.href = "#";
+      exit_link.classList.add('menu-link');
+      exit_link.addEventListener('click', function (e) {
+        e.preventDefault();
+        localStorage.removeItem('token');
+        window.location.reload();
+      });
+      exit_opt.appendChild(exit_link);
       drop_down_menu.appendChild(new_opt);
       drop_down_menu.appendChild(settings_opt);
+      drop_down_menu.appendChild(exit_opt);
     })["catch"](function (err) {
       return console.error(err);
     });
