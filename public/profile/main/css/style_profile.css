@@ -1,9 +1,9 @@
-
 a {
   text-decoration: none;
+  color: inherit; /* 🔹 Mantiene il colore del testo coerente con il contesto */
 }
 
-/*  Stile base per il body */
+/* Stile base per il body */
 body {
   min-width: 400px;
   margin: 0;
@@ -13,7 +13,7 @@ body {
   height: 200vh;
 }
 
-/*  Menu principale */
+/* Menu principale */
 .menu {
   display: flex;
   flex-wrap: wrap;
@@ -25,7 +25,7 @@ body {
   background-color: #f3f3f3;
 }
 
-/*  Logo stilizzato */
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -41,7 +41,6 @@ body {
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
   cursor: pointer;
   transition: all 0.3s ease;
-  text-decoration: none;
 }
 
 .logo:hover {
@@ -50,13 +49,12 @@ body {
   transform: scale(1.05);
 }
 
-/*  Icona del logo */
+/* Icona e testo logo */
 .logo-icon {
   width: 24px;
   height: 24px;
 }
 
-/*  Testo del logo */
 .logo-text {
   font-style: italic;
   font-family: 'Georgia', 'Times New Roman', serif;
@@ -66,7 +64,7 @@ body {
   margin-top: 20px;
 }
 
-/*  Bottone inserisci annuncio */
+/* Bottone inserisci annuncio */
 .insert_ad {
   cursor: pointer;
   display: inline-block;
@@ -86,7 +84,7 @@ body {
   transform: translateY(-2px);
 }
 
-/*  Responsive: menu verticale su schermi piccoli */
+/* Responsive */
 @media (max-width: 768px) {
   .menu {
     flex-direction: column;
@@ -94,7 +92,7 @@ body {
   }
 }
 
-/*  Contenuto principale */
+/* Contenuto principale */
 .main {
   min-height: 100vh;
   display: flex;
@@ -103,12 +101,12 @@ body {
   padding-bottom: 1rem;
 }
 
-/* 🌍 Icona Terra cliccabile */
+/* Icona Terra */
 .earth {
   cursor: pointer;
 }
 
-/*  Sezione "Chi siamo" */
+/* Sezione "Chi siamo" */
 .about-section {
   display: flex;
   justify-content: center;
@@ -119,7 +117,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/*  Dropdown menu utente */
+/* Dropdown utente */
 .dropdown {
   position: relative;
   display: inline-flex;
@@ -136,7 +134,7 @@ body {
   transform: scale(1.05);
 }
 
-/*  Icona freccia rotante */
+/* Freccia animata */
 .arrow-img {
   width: 16px;
   height: 16px;
@@ -147,7 +145,7 @@ body {
   transform: rotate(90deg);
 }
 
-/*  Menu dropdown nascosto */
+/* Menu dropdown */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -157,27 +155,42 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  min-width: 150px;
+  min-width: 160px; /* 🔹 leggermente aumentato per evitare testo tagliato */
   z-index: 100;
 }
 
-/* Mostra dropdown al hover */
+/* Mostra menu al passaggio */
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/*  Voce del menu */
+/* Voci menu */
 .dropdown-item,
 #dropdown-item-user {
-  padding: 10px;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px; /* 🔹 migliora la leggibilità */
+  transition: background-color 0.2s ease;
 }
 
 .dropdown-item:hover {
   background-color: #f0f0f0;
 }
 
-/*  Sezione filtri di ricerca */
+.menu-link {
+  text-align: center;
+  width: 100%;
+  display: block; /* 🔹 garantisce che tutto il link sia cliccabile */
+  color: #333;
+}
+
+/* 🔹 BONUS: miglior contrasto quando hoveri un link */
+.menu-link:hover {
+  color: #007e3a;
+}
+
+/* Sezione filtri di ricerca */
 .search-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -209,7 +222,7 @@ body {
   font-size: 1rem;
 }
 
-/*  Campo posizione con bottone */
+/* Campo posizione con bottone */
 .location-wrapper {
   display: flex;
   align-items: center;
@@ -232,7 +245,7 @@ body {
   font-size: 1.1rem;
 }
 
-/*  Suggerimenti città */
+/* Suggerimenti città */
 #cityInput {
   width: 100%;
   padding: 10px;
@@ -266,7 +279,7 @@ body {
   background-color: #f0f0f0;
 }
 
-/*  Container annunci (nascosto di default) */
+/* Container annunci */
 #annunci-container {
   display: none;
   flex-wrap: wrap;
@@ -275,11 +288,11 @@ body {
   padding: 1rem;
 }
 
-/* Mostrato dopo caricamento */
 #annunci-container.show {
   display: flex;
 }
 
+/* Card annuncio */
 .annuncio-card {
   display: flex;
   flex-direction: column;
@@ -293,7 +306,7 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* RIGA: immagine + titolo/prezzo */
+/* Parte superiore card */
 .annuncio-top {
   display: flex;
   flex-direction: row;
@@ -301,7 +314,6 @@ body {
   gap: 1rem;
 }
 
-/* Immagine a sinistra */
 .annuncio-img {
   width: 180px;
   height: 120px;
@@ -310,7 +322,6 @@ body {
   background-color: #f2f2f2;
 }
 
-/* Titolo e prezzo */
 .annuncio-basic-info {
   display: flex;
   flex-direction: column;
@@ -331,7 +342,7 @@ body {
   color: #007e3a;
 }
 
-/* Descrizione + altri dettagli */
+/* Dettagli annuncio */
 .annuncio-dettagli {
   padding: 0.8rem 1rem;
   border-top: 1px solid #eee;
@@ -357,6 +368,7 @@ body {
   font-weight: bold;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 15px;
@@ -365,3 +377,4 @@ footer {
   font-size: 14px;
   border-top: 1px solid #ddd;
 }
+
