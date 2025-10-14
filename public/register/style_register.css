@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* RESET & BASE */
 * {
   margin: 0;
   padding: 0;
@@ -10,33 +10,79 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f6fa;
-  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #6dd5fa, #2980b9);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 20px;
 }
 
-/* Container */
+/* REGISTER BOX MODERNA */
 .register-box {
-  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 15px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 500px;
-  border: 1px solid #405c9d;
-  border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
-h2 {
+.register-box:hover {
+  transform: translateY(-5px);
+}
+
+/* TITOLO */
+.register-box h2 {
+  font-size: 2rem;
+  color: #2980b9;
+  margin-bottom: 25px;
   text-align: center;
-  margin-bottom: 20px;
-  color: #333;
 }
 
-/* Input Layout */
+/* INPUT & SELECT */
+.register-box input,
+.register-box select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.register-box input:focus,
+.register-box select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52,152,219,0.3);
+  outline: none;
+}
+
+/* BUTTON */
+.register-box .button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.register-box .button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* GROUP FLEXBOX (nome, email, ecc.) */
 .nome-completo,
-.email-password {
+.email-password,
+.data-nascita {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -45,98 +91,46 @@ h2 {
 }
 
 .nome,
-.entry {
+.entry,
+.data-nascita-box {
   flex: 1;
   padding: 12px;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s ease;
+  border-radius: 10px;
 }
 
 .nome:focus,
 .entry:focus,
-.data-nascita-box:focus,
-select:focus {
-  border-color: #2266ff;
-  outline: none;
+.data-nascita-box:focus {
+  border-color: #3498db;
 }
 
-/* Gender */
+/* SEX SELECTION */
 .sesso {
   display: flex;
   justify-content: space-evenly;
   gap: 10px;
-  margin: 15px 0;
+  margin-bottom: 15px;
 }
 
 .sex {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 10px;
+  padding: 8px 12px;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: #f8f9fc;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .sex:hover {
-  background-color: #e6efff;
+  background-color: #e6f0ff;
 }
 
-/* Date */
-.data-nascita {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.data-nascita-box {
-  flex: 1;
-  padding: 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-/* Button */
-.button {
-  width: 100%;
-  padding: 14px;
-  font-size: 1rem;
-  background-color: #2266ff;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 20px;
-}
-
-.button:hover {
-  background-color: #1a54d1;
-  transform: scale(1.02);
-}
-
-/* Labels & Select */
-label {
-  margin-bottom: 5px;
-  color: #444;
-  font-weight: bold;
-  font-size: 0.95rem;
-  display: block;
-}
-
-select {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-/* Mini Notifica */
+/* MINI SUCCESS */
 .mini-success {
   position: fixed;
   top: 50%;
@@ -144,26 +138,19 @@ select {
   transform: translate(-50%, -50%);
   background-color: #d0ebff;
   color: #1c4b91;
-  font-size: 1.5rem; /* <-- va benissimo */
+  font-size: 1.5rem;
   padding: 12px 20px;
   border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   animation: fadeinout 3s ease-in-out forwards;
   z-index: 9999;
   max-width: 90vw;
   text-align: center;
-  line-height: 1.2; /* 🔧 aiuta a ridurre l'altezza totale */
-}
-
-
-.mini-success svg {
-  width: 12px;
-  height: 12px;
-  stroke: #1c4b91;
+  line-height: 1.2;
 }
 
 @keyframes fadeinout {
@@ -173,16 +160,16 @@ select {
   100% { opacity: 0; transform: translateY(-10px); }
 }
 
-
+/* VERIFICATION CODE SECTION */
 #code-section {
-  display: none; /* inizialmente nascosto */
+  display: none;
   margin: 20px auto;
   padding: 20px;
   max-width: 400px;
   background-color: #f9f9f9;
   border: 2px solid #ccc;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
   transition: all 0.3s ease-in-out;
 }
@@ -216,3 +203,24 @@ select {
 #verify-btn:hover {
   background-color: #0056b3;
 }
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .register-box {
+    width: 90%;
+    padding: 30px 20px;
+    border-radius: 12px;
+  }
+
+  .register-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .register-box input,
+  .register-box select,
+  .register-box .button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+
