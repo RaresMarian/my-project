@@ -53,19 +53,13 @@
           <input type="password" id="confermaPassword" name="confermaPassword" placeholder="Conferma la nuova password">
 
           <button type="submit">Cambia password</button>
+        
+          
         </form>
       </section>
     </main>
   </div>
 
-  <script>
-    function showSection(id, element) {
-      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-      document.querySelectorAll('.sidebar li').forEach(li => li.classList.remove('active'));
-      element.classList.add('active');
-    }
-
-  </script>
+  <script src="settings.js"></script>
 </body>
 </html>
