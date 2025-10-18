@@ -16,7 +16,7 @@ function loadUserData() {
   const token = localStorage.getItem('token');
   if (!token) return; // se non loggato, esce
 
-  fetch('http://localhost:3000/load-info', {
+  fetch('/load-info', {
     method: 'GET',
     headers: {
       'x-auth-token': token,
@@ -62,7 +62,7 @@ function deleteAccount() {
 function proceedDeleteAccount() {
   const token = localStorage.getItem('token');
 
-  fetch('http://localhost:3000/delete-user', {
+  fetch('/delete-user', {
     method: 'DELETE',
     headers: {
       'x-auth-token': token,

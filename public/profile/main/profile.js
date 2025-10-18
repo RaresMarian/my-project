@@ -166,7 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
     register_opt.appendChild(register_link);
     drop_down_menu.appendChild(register_opt);
 
-
   }
 
   // =========================================
