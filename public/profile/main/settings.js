@@ -34,6 +34,7 @@ function loadUserData() {
     document.getElementById('cognome').value = data.surname || '';
     document.getElementById('dataNascita').value = data.birth_date ? data.birth_date.split('T')[0] : '';
     document.getElementById('cellulare').value = data.phone || '';
+    document.getElementById('email').value = data.email || '';
 
     
   })

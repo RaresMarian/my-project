@@ -144,6 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch(err => console.error(err));
   } else {
+    // aggiungi link per accedere
     const drop_down_menu = document.querySelector('.dropdown-menu');
     const new_opt = document.createElement('div');
     new_opt.classList.add('dropdown-item');
@@ -153,6 +154,19 @@ document.addEventListener("DOMContentLoaded", function () {
     link.classList.add('menu-link');
     new_opt.appendChild(link);
     drop_down_menu.appendChild(new_opt);
+    // aggiungi link per registrarti 
+
+    // Elemento "Registrati"
+    const register_opt = document.createElement('div');
+    register_opt.classList.add('dropdown-item');
+    const register_link = document.createElement('a');
+    register_link.innerText = "Registrati";
+    register_link.href = '/register/register.html'; // metti la tua pagina di registrazione
+    register_link.classList.add('menu-link');
+    register_opt.appendChild(register_link);
+    drop_down_menu.appendChild(register_opt);
+
+
   }
 
   // =========================================
