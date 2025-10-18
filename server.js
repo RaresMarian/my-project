@@ -25,6 +25,7 @@ const show_my_adds= require('./routes/show-my-adds');
 const show_adds=require('./routes/show-adds');
 const verify= require('./routes/verify.js');
 const dotenv = require("dotenv").config();
+const deleting = require('./routes/delete_account.js');
 
 
 app.use('/', home_page);
@@ -37,6 +38,8 @@ app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/register/register.html'));
   });
 
+
+
 // routes
 app.use('/',verify);
 app.use('/',annunci);
@@ -44,6 +47,7 @@ app.use('/',show_my_adds);
 app.use('/',show_adds);
 app.use('/',trova_annunci);
 app.use('/',loadinfo);
+app.use('/',deleting);
 
 app.use('/authentication',authentication);
 app.use('/',sendEmail);

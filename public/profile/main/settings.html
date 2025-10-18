@@ -53,12 +53,20 @@
           <input type="password" id="confermaPassword" name="confermaPassword" placeholder="Conferma la nuova password">
 
           <button type="submit">Cambia password</button>
-        
-          
+          <button type="button" onclick="deleteAccount()">Elimina account</button>
         </form>
       </section>
     </main>
   </div>
+  <div id="confirm-popup" class="popup-overlay" style="display:none;">
+  <div class="popup-content">
+    <p>Sei sicuro di voler eliminare il tuo account? Questa azione è irreversibile.</p>
+    <div class="popup-buttons">
+      <button id="cancel-btn">Annulla</button>
+      <button id="confirm-btn">Elimina</button>
+    </div>
+  </div>
+</div>
 
   <script src="settings.js"></script>
 </body>

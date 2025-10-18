@@ -44,6 +44,8 @@ var verify = require('./routes/verify.js');
 
 var dotenv = require("dotenv").config();
 
+var deleting = require('./routes/delete_account.js');
+
 app.use('/', home_page);
 app.get('/login', function (req, res) {
   res.sendFile(path.join(__dirname, 'public/login/login.html'));
@@ -58,6 +60,7 @@ app.use('/', show_my_adds);
 app.use('/', show_adds);
 app.use('/', trova_annunci);
 app.use('/', loadinfo);
+app.use('/', deleting);
 app.use('/authentication', authentication);
 app.use('/', sendEmail);
 app.use('/', verify_code);
