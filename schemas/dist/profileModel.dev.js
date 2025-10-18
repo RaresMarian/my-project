@@ -13,7 +13,6 @@ var UserSchema = new mongoose.Schema({
     required: true // opzionale, ma consigliato
 
   },
-  cellulare: String,
   password: String
 }, {
   timestamps: true

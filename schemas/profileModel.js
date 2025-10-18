@@ -10,7 +10,6 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     required: true // opzionale, ma consigliato
   },
-  cellulare: String,
   password: String
 }, {
   timestamps: true
