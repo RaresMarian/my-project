@@ -38,22 +38,24 @@
         <input class="entry" type="password" id="password" placeholder="Password" required>
       </div>
 
-      <button class="button" id="register-btn">Registrati</button>
+      <button class="button" id="register-btn" type="button">Registrati</button>
     </div>
 
-    <div id="success-toast" class="mini-success" style="display: none;">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-  </svg>
-  Registrazione completata!
-</div>
+    <div id="code-section" style="display: none; margin-top: 15px;">
+      <input type="text" id="verification-code" placeholder="Inserisci codice di verifica" />
+      <button type="button" id="verify-btn">Verifica Codice</button>
+    </div>
   </form>
-  <div id="code-section" style="display: none;">
-  <input type="text" id="verification-code" placeholder="Inserisci codice di verifica" />
-  <button id="verify-btn">Verifica Codice</button>
+
+  <!-- Toast per registrazione completata -->
+  <div id="success-toast" class="mini-success">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+    </svg>
+    Registrazione completata!
   </div>
-  
 
   <script src="regControl.js"></script>
 </body>
 </html>
+
