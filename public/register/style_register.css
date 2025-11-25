@@ -172,7 +172,7 @@ body {
 /* VERIFICATION CODE SECTION */
 #code-section {
   display: none;
-  margin: 20px auto;
+  
   padding: 20px;
   max-width: 400px;
   background-color: #f9f9f9;

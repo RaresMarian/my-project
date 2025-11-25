@@ -16,12 +16,21 @@ getId("register-btn").addEventListener("click", async (event) => {
     ? getId("sex-female").value
     : null;
 
+    
+  const email = getId("email").value.trim().toLowerCase();
+
+  // Controllo email valida
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert("Inserisci un'email valida");
+    return;
+}  
   credential = {
     name: getId("name").value.trim(),
     surname: getId("surname").value.trim(),
     sex,
     birth_date: getId("birth_date").value,
-    email: getId("email").value.trim().toLowerCase(),
+    email:email,
     password: getId("password").value
   };
 

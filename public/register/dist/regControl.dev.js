@@ -14,7 +14,7 @@ var getId = function getId(id) {
 
 
 getId("register-btn").addEventListener("click", function _callee(event) {
-  var form, sex, res, data, codeSection;
+  var form, sex, email, emailRegex, res, data, codeSection;
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -31,16 +31,29 @@ getId("register-btn").addEventListener("click", function _callee(event) {
 
         case 4:
           sex = getId("sex-male").checked ? getId("sex-male").value : getId("sex-female").checked ? getId("sex-female").value : null;
+          email = getId("email").value.trim().toLowerCase(); // Controllo email valida
+
+          emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (emailRegex.test(email)) {
+            _context.next = 10;
+            break;
+          }
+
+          alert("Inserisci un'email valida");
+          return _context.abrupt("return");
+
+        case 10:
           credential = {
             name: getId("name").value.trim(),
             surname: getId("surname").value.trim(),
             sex: sex,
             birth_date: getId("birth_date").value,
-            email: getId("email").value.trim().toLowerCase(),
+            email: email,
             password: getId("password").value
           };
-          _context.prev = 6;
-          _context.next = 9;
+          _context.prev = 11;
+          _context.next = 14;
           return regeneratorRuntime.awrap(fetch('/send-email', {
             method: "POST",
             headers: {
@@ -49,22 +62,22 @@ getId("register-btn").addEventListener("click", function _callee(event) {
             body: JSON.stringify(credential)
           }));
 
-        case 9:
+        case 14:
           res = _context.sent;
 
           if (!(res.status === 400)) {
-            _context.next = 13;
+            _context.next = 18;
             break;
           }
 
           alert("Email già esistente");
           return _context.abrupt("return");
 
-        case 13:
-          _context.next = 15;
+        case 18:
+          _context.next = 20;
           return regeneratorRuntime.awrap(res.json());
 
-        case 15:
+        case 20:
           data = _context.sent;
 
           if (data) {
@@ -76,21 +89,21 @@ getId("register-btn").addEventListener("click", function _callee(event) {
             }, 100); // effetto fade-in
           }
 
-          _context.next = 23;
+          _context.next = 28;
           break;
 
-        case 19:
-          _context.prev = 19;
-          _context.t0 = _context["catch"](6);
+        case 24:
+          _context.prev = 24;
+          _context.t0 = _context["catch"](11);
           console.error("Errore durante la registrazione:", _context.t0);
           alert("Errore di rete durante la registrazione");
 
-        case 23:
+        case 28:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[6, 19]]);
+  }, null, null, [[11, 24]]);
 }); // Verifica codice
 
 getId("verify-btn").addEventListener("click", function _callee2() {
