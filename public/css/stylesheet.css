@@ -1,20 +1,20 @@
 :root {
-  --verde-primario: #2e7d32;
-  --verde-secondario: #4caf50;
-  --verde-accento: #81c784;
-  --verde-chiaro: #e8f5e9;
-  --verde-scuro: #1b5e20;
-  --ombra-verde: rgba(76, 175, 80, 0.2);
-  --blu-professionale: #00bcd4;
-  --blu-scuro: #0097a7;
-  --blu-hover: #274bb5;
+  --verde-primario: #3cb489;
+  --verde-secondario: #33a07a;
+  --verde-accento: #47c9a9;
+  --verde-chiaro: #dff8f1;
+  --verde-scuro: #2a6b57;
+  --ombra-verde: rgba(60, 180, 137, 0.25);
+  /* ⭐ NUOVO GRADIENTE CHE HAI SCELTO ⭐ */
+  --gradiente-hero: linear-gradient(-225deg, #20E2D7 0%, #F9FEA5 100%);
 }
+
 
 body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  background-color: var(--verde-accento);
+  background-image: var(--gradiente-hero);
   font-size: large;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -304,14 +304,11 @@ button:hover,
 
 .immagine-responsive {
   width: 100%;
-  height: auto;
-  display: block;
-  content: url('../images/neon-lights-7340790_1280.jpg');
+  height: 300px;
+  background: linear-gradient(135deg, var(--blu-professionale), var(--verde-primario));
+  background-size: cover;
+  background-position: center;
 }
 
-@media (max-width: 480px) {
-  .immagine-responsive {
-    content: url('../images/neon-lights-mobile.jpg'); /* Metti il nome della tua immagine per mobile */
-  }
-}
+
 
