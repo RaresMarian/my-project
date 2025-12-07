@@ -1,4 +1,4 @@
-/* RESET E STILI BASE */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +13,7 @@ body {
   align-items: center;
   background: linear-gradient(135deg, #6dd5fa, #2980b9);
   color: #333;
+  padding: 20px;
 }
 
 /* LOGIN BOX MODERNA */
@@ -95,11 +96,33 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 480px) {
-  .login-box {
-    width: 90%;
-    padding: 30px 20px;
-    border-radius: 10px;
+  body {
+    height: 100vh;
+    padding: 0;
+    align-items: flex-start;
   }
+
+  .login-box {
+    width: 100%;
+    height: 100vh;
+    max-width: 100%;
+    border-radius: 0;
+    padding: 50px 25px;
+    justify-content: center;
+  }
+
+  .login-box h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .login-box input:not([type="button"]),
+  .login-box input[type="button"] {
+    font-size: 1.1rem;
+    padding: 14px;
+  }
+}
+
 
   .login-box h1 {
     font-size: 1.5rem;
@@ -110,4 +133,3 @@ body {
     font-size: 0.95rem;
     padding: 10px;
   }
-}
