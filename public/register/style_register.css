@@ -5,47 +5,24 @@
   box-sizing: border-box;
 }
 
-/* FULL SCREEN MOBILE PER REGISTER */
-@media (max-width: 480px) {
-
-  body {
-    height: 100vh;
-    padding: 0;
-    align-items: flex-start;
-  }
-
-  .register-box {
-    width: 100%;
-    height: 100vh;
-    max-width: 100%;
-    border-radius: 0;
-    padding: 50px 25px;
-    justify-content: center;
-  }
-
-  .register-box h2 {
-    font-size: 1.8rem;
-    margin-bottom: 35px;
-  }
-
-  .register-box input,
-  .register-box select {
-    font-size: 1.05rem;
-    padding: 14px;
-  }
-
-  .button {
-    font-size: 1.2rem !important;
-    padding: 16px !important;
-  }
-
-  .nome-completo,
-  .email-password,
-  .data-nascita {
-    flex-direction: column;
-    gap: 12px;
-  }
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6dd5fa, #2980b9);
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6dd5fa, #2980b9);
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 
 /* REGISTER BOX MODERNA */
 .register-box {
@@ -245,23 +222,58 @@
   background-color: #0056b3;
 }
 
-/* RESPONSIVE */
+/* FULL SCREEN MOBILE PER REGISTER */
 @media (max-width: 480px) {
+
+  body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .register-box {
-    width: 90%;
-    padding: 30px 20px;
-    border-radius: 12px;
+    width: 100%;
+    height: 100vh;
+    max-width: 100%;
+    border-radius: 0;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .register-box h2 {
-    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    font-size: 1.8rem;
+    margin-bottom: 35px;
   }
 
   .register-box input,
   .register-box select,
   .register-box .button {
-    font-size: 0.95rem;
-    padding: 10px;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 14px;
   }
+
+  .nome-completo,
+  .email-password,
+  .data-nascita {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .sex {
+    width: 100%;
+    justify-content: center;
+  }
+
 }
+
+
 

@@ -94,7 +94,6 @@ body {
   text-decoration: underline;
 }
 
-/* RESPONSIVE */
 @media (max-width: 480px) {
   body {
     height: 100vh;
@@ -122,14 +121,3 @@ body {
     padding: 14px;
   }
 }
-
-
-  .login-box h1 {
-    font-size: 1.5rem;
-  }
-
-  .login-box input:not([type="button"]),
-  .login-box input[type="button"] {
-    font-size: 0.95rem;
-    padding: 10px;
-  }
