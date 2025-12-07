@@ -34,9 +34,9 @@ body {
   font-family: 'Segoe UI', sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #2e7d32;
+  color: #47c9a9;
   background: linear-gradient(to bottom right, #ffffff, #e8f5e9);
-  border: 2px solid #4CAF50;
+  border: 2px solid #47c9a9;
   border-radius: 999px;
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
   cursor: pointer;
@@ -45,7 +45,7 @@ body {
 
 .logo:hover {
   background: linear-gradient(to bottom right, #c8e6c9, #a5d6a7);
-  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+  box-shadow: 0 6px 16px #47c9a9;
   transform: scale(1.05);
 }
 
@@ -59,7 +59,7 @@ body {
   font-style: italic;
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 1.4rem;
-  color: #2e7d32;
+  color: #47c9a9;
   text-align: center;
   margin-top: 20px;
 }
@@ -69,7 +69,7 @@ body {
   cursor: pointer;
   display: inline-block;
   padding: 16px 32px;
-  background: linear-gradient(to right, #4CAF50, #66BB6A);
+  background: linear-gradient(to right, #47c9a9, #19d2a4);
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
@@ -80,7 +80,7 @@ body {
 }
 
 .insert_ad:hover {
-  background: linear-gradient(to right, #388E3C, #43A047);
+  background: linear-gradient(to right, #47c9a9, #2fc19d);
   transform: translateY(-2px);
 }
 
@@ -187,7 +187,7 @@ body {
 
 /* 🔹 BONUS: miglior contrasto quando hoveri un link */
 .menu-link:hover {
-  color: #007e3a;
+  color: #47c9a9;
 }
 
 /* Sezione filtri di ricerca */
@@ -235,7 +235,7 @@ body {
 }
 
 .detect-btn {
-  background-color: #4caf50;
+  background-color: #47c9a9;
   color: white;
   border: none;
   padding: 0.7rem;
@@ -339,7 +339,7 @@ body {
 .annuncio-prezzo {
   font-size: 1rem;
   font-weight: bold;
-  color: #007e3a;
+  color: rgb(58, 176, 113);
 }
 
 /* Dettagli annuncio */
