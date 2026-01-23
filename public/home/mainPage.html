@@ -1,18 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Vendoora - Compra e Vendi Prodotti Usati Facilmente</title>
+    <meta
+      name="description"
+      content="Vendoora: compra e vendi prodotti usati facilmente. Scopri annunci locali e vendi i tuoi oggetti con semplicità."
+    />
     <link rel="stylesheet" href="../css/stylesheet.css" />
-    <link rel="icon" href="/favicon.jpg" type="image/jpg" >
+    <link rel="icon" href="/favicon.jpg" type="image/jpg" />
   </head>
 
   <body>
-    <!-- Barra di navigazione -->
-    <div class="menubar">
+    <!-- Header e barra di navigazione -->
+    <header class="menubar">
       <div class="box box-1">
-        <a href="#"><img class="logo" src="../logo/store-simple.svg" alt="Logo" /></a>
+        <a href="#"
+          ><img class="logo" src="../logo/store-simple.svg" alt="Logo Vendoora"
+        /></a>
         <div class="Privati">
           <p>Privati</p>
           <span class="arrow"></span>
@@ -23,50 +29,66 @@
         <!-- Contenuti aggiuntivi -->
       </div>
 
-
       <div class="box box-3">
         <a href="../profile/main/profile_page.html">
-                  <div class="logo_cart">
-                      <img src="../profile/main/images/shopping-cart.png" alt="logo" class="logo-icon">
-                      <h1 class="logo-text">Vendoora</h1>
-                  </div>
+          <div class="logo_cart">
+            <img
+              src="../profile/main/images/shopping-cart.png"
+              alt="Vai al carrello"
+              class="logo-icon"
+            />
+            <h1 class="logo-text">Vendoora</h1>
+          </div>
         </a>
       </div>
 
       <div class="box box-4">
-        <div id="login" style="display: none;"><a href="../login/login.html">Login</a></div>
-        <div id="register" style="display: none;"><a href="../register/register.html">Register</a></div>
-        <div id="logoutBtn" style="display: none;"><a href="">Esci</a></div>
-
+        <div id="login" style="display: none">
+          <a href="../login/login.html">Login</a>
+        </div>
+        <div id="register" style="display: none">
+          <a href="../register/register.html">Register</a>
+        </div>
+        <div id="logoutBtn" style="display: none"><a href="">Esci</a></div>
       </div>
-    </div>
+    </header>
 
     <!-- Menu mobile o laterale -->
-    <div class="apri_menu">
+    <nav class="apri_menu" aria-label="Menu principale">
       <div></div>
       <div></div>
       <div></div>
 
-      <div class="cella-menu"><a class="link-menu" href="#">Scopri</a></div>
-      <div class="cella-menu"><a class="link-menu" href="../profile/main/insert-add/insert-add.html">Vendi</a></div>
-      <div class="cella-menu"><a class="link-menu" href="#">Preferiti</a></div>
-    </div>
-
-    
-    <div class="Principale">
-      <div class="esci">
-        <div class="frase f1">Compra</div>
-        <div class="frase f2">e</div>
-        <div class="frase f3">Vendi</div>
-        <div class="frase f4">Facilmente</div>
+      <div class="cella-menu">
+        <a class="link-menu" href="#" title="Scopri">Scopri</a>
       </div>
-
-      <div class="imm animate__animated animate__fadeIn">
-        <img class="immagine-responsive" />
+      <div class="cella-menu">
+        <a
+          class="link-menu"
+          href="../profile/main/insert-add/insert-add.html"
+          title="Vendi i tuoi prodotti"
+          >Vendi</a
+        >
       </div>
-    </div>
+      <div class="cella-menu">
+        <a class="link-menu" href="#" title="Visualizza i tuoi preferiti"
+          >Preferiti</a
+        >
+      </div>
+    </nav>
+
+    <!-- Sezione principale -->
+    <main class="Principale">
+      <section class="esci">
+        <h1 class="frase f1">Compra</h1>
+        <h2 class="frase f2">e</h2>
+        <h2 class="frase f3">Vendi</h2>
+        <h2 class="frase f4">Facilmente</h2>
+      </section>
+
+      <section class="imm animate__animated animate__fadeIn"></section>
+    </main>
 
     <script src="./js/main.js"></script>
   </body>
 </html>
-
